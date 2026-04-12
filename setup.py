@@ -53,7 +53,7 @@ if sys.version_info < (3, 9) or sys.version_info >= (4, 0):
     print('=' * 60)
     sys.exit(1)
 
-with io.open('QUANTAXIS/__init__.py', 'rt', encoding='utf8') as f:
+with io.open('QUANTAXIS/__init__.py', 'rt', encoding='utf-8') as f:
     context = f.read()
     VERSION = re.search(r'__version__ = \'(.*?)\'', context).group(1)
     AUTHOR = re.search(r'__author__ = \'(.*?)\'', context).group(1)
@@ -129,7 +129,7 @@ URL = "https://github.com/quantaxis/quantaxis"
 
 LICENSE = "MIT"
 
-with open('requirements.txt') as reqs_file:
+with open('requirements.txt',encoding='utf-8') as reqs_file:
     INSTALL_REQUIRES = [
         line.strip() for line in reqs_file
         if line.strip() and not line.strip().startswith('#')
